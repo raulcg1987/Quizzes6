@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Quizzes</string>
+    <string name="title_activity_main2">Quizzes Respuesta</string>
+    <string name="send">Enviar</string>
+    <string name="mensaje">No ha elegido ninguna respuesta.</string>
+    <string name="acierto">Correcto!</string>
+    <string name="btn_acierto">Siguiente</string>
+    <string name="fallo">Fallo!</string>
+    <string name="btn_fallo">Reintentar</string>
+    <string name="terminado">Has pasado el Quiz!</string>
+    <string name="btn_terminado">Empezar</string>
+
+
+
+
+</resources>
