@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
+import kotlinx.android.synthetic.main.activity_main2.*
 
 class Main2Activity : AppCompatActivity() {
 
@@ -15,27 +16,27 @@ class Main2Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
-        //Recibo los parámetros acierto y numpregunta
+        //Parameters receiving
         val acierto = intent.getIntExtra("Acierto",0)
         val numpregunta = intent.getIntExtra("Pregunta",0)
 
-        //Los elementos se muestran diferentes en función de si se acierta o no
+        //Change elements values depending if correct or fail
         if (acierto == 0){
-            findViewById<TextView>(R.id.respuesta).text = getString(R.string.fallo)
-            findViewById<Button>(R.id.next).text = getString(R.string.btn_fallo)
+            respuesta.text = getString(R.string.fallo)
+            next.text = getString(R.string.btn_fallo)
         }else {
             if (numpregunta==3){
-                findViewById<TextView>(R.id.respuesta).text = getString(R.string.terminado)
-                findViewById<Button>(R.id.next).text = getString(R.string.btn_terminado)
+                respuesta.text = getString(R.string.terminado)
+                next.text = getString(R.string.btn_terminado)
             } else {
-                findViewById<TextView>(R.id.respuesta).text = getString(R.string.acierto)
-                findViewById<Button>(R.id.next).text = getString(R.string.btn_acierto)
+                respuesta.text = getString(R.string.acierto)
+                next.text = getString(R.string.btn_acierto)
             }
         }
 
-        // Listener del botón
-        findViewById<Button>(R.id.next).setOnClickListener {
-            //Vuelvo a la actividad 1 pasando los mismos parámetros
+        //Button Listener
+        next.setOnClickListener {
+            //Go back A1 using same parameters
             val intento1 = Intent(this, MainActivity::class.java).apply {
                 //Le paso el parámetro de si es un acierto o no
                 putExtra("Acierto", acierto)
